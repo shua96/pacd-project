@@ -1,5 +1,5 @@
 <template>
-    <h1>Chart</h1>
+    <h1 class="subtitle-1">Statistical View</h1>
     <div>
         <canvas id="myChart"></canvas>
     </div>
@@ -17,10 +17,10 @@ export default {
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Very Satisfactory', 'Satisfactory', 'Poor'],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'Number of Feedback',
+                    data: [12, 19, 3],
                     borderWidth: 1
                 }]
             },

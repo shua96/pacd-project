@@ -1,34 +1,36 @@
 <template>
+  <v-navigation-drawer v-model="drawer" :rail="rail" permanent @click="rail = false" app fixed clipped color="#4D68AF"
+    light>
+    <v-list-item prepend-avatar="src/assets/logo.png" title="TESDA-PACD" nav style="color: white;">
+      <template v-slot:append>
+        <v-btn variant="text" icon="mdi-chevron-left" @click.stop="rail = !rail"></v-btn>
+      </template>
+    </v-list-item>
 
-  <v-layout style="height: 100vh">
-    <v-navigation-drawer v-model="drawer" :rail="rail" permanent @click="rail = false">
-      <v-list-item prepend-avatar="https://randomuser.me/api/portraits/men/85.jpg" title="John Leider" nav>
-        <template v-slot:append>
-          <v-btn variant="text" icon="mdi-chevron-left" @click.stop="rail = !rail"></v-btn>
-        </template>
-      </v-list-item>
+    <v-divider></v-divider>
 
-      <v-divider></v-divider>
-
-      <v-list density="compact" nav>
-        <v-list-item prepend-icon="mdi-home-city" title="Home" value="home"></v-list-item>
-        <v-list-item prepend-icon="mdi-account" title="My Account" value="account"></v-list-item>
-        <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-main style="height: 250px"></v-main>
-  </v-layout>
-
+    <v-list density="compact" nav style="color: white;">
+      <v-list-item prepend-icon="mdi-view-dashboard" title="DASHBOARD" value="dashboard"
+        style="color: white;"></v-list-item>
+      <v-list-item prepend-icon="mdi-frequently-asked-questions" title="FAQ LIST" value="faq"
+        style="color: white;"></v-list-item>
+      <v-list-item prepend-icon="mdi-database" title="CLIENT DATA" value="database" style="color: white;"></v-list-item>
+      <v-list-item prepend-icon="mdi-poll" title="SUMMARY REPORT" value="report" style="color: white;"></v-list-item>
+    </v-list>
+  </v-navigation-drawer>
+  <v-main style="height: 100vh"></v-main>
 </template>
+
 <script>
 export default {
   data() {
     return {
       drawer: true,
       items: [
-        { title: 'Home', icon: 'mdi-home-city' },
-        { title: 'My Account', icon: 'mdi-account' },
-        { title: 'Users', icon: 'mdi-account-group-outline' },
+        { title: 'Home', icon: 'mdi-view-dashboard' },
+        { title: 'FAQ LIST', icon: 'mdi-frequently-asked-questionst' },
+        { title: 'CLIENT DATA', icon: 'mdi-database' },
+        { title: 'SUMMARY REPORT', icon: 'mdi-poll' },
       ],
       rail: true,
     }
